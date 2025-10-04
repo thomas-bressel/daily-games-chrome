@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "npm run build:next && npm run build:extension",
-    "build:next": "next build",
-    "build:extension": "node scripts/prepare-extension.js",
-    "start": "next start",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "cypress": "cypress open",
-    "cypress:headless": "cypress run"
-  },
+  "dev": "next dev",
+  "build:next": "next build",
+  "prepare:extension": "node scripts/prepare-extension.js", 
+  "build": "npm run build:next && npm run prepare:extension",
+  "start": "next start",
+  "test": "jest",
+  "test:watch": "jest --watch",
+  "test:coverage": "jest --coverage",
+  "cypress": "cypress open",
+  "cypress:headless": "cypress run"
+},
   "dependencies": {
     "next": "^14.0.0",
     "react": "^18.2.0",

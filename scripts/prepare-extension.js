@@ -1,8 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 
-const distDir = path.join(__dirname, '..', 'dist');
-const publicDir = path.join(__dirname, '..', 'public');
+const rootDir = path.join(__dirname, '..'); 
+const distDir = path.join(rootDir, 'dist');
+const publicDir = path.join(rootDir, 'public');
+
+// New paths
+const nextDir = path.join(distDir, '_next');
+const newNextDir = path.join(distDir, 'app_next'); // New name without  '_'
+const nextPrefix = './_next/'; // Prefix used into paths genereted by Next
 
 console.log('🔧 Preparing Chrome Extension files...');
 
@@ -11,11 +17,21 @@ if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
 
+// --- Move the  _next folder ---
+if (fs.existsSync(nextDir)) {
+    fs.renameSync(nextDir, newNextDir);
+    console.log(`✅ Renamed ${path.basename(nextDir)} to ${path.basename(newNextDir)}`);
+} else {
+    console.warn(`⚠️  Folder ${path.basename(nextDir)} not found. Skipping rename.`);
+}
+// ----------------------------------------------------
+
+
 // Cpy extention important files
 const filesToCopy = ['manifest.json', 'background.js'];
 const foldersToCopy = ['icons'];
 
-// Copy files
+// Copy files (unchanged)
 filesToCopy.forEach(file => {
   const src = path.join(publicDir, file);
   const dest = path.join(distDir, file);
@@ -27,7 +43,7 @@ filesToCopy.forEach(file => {
   }
 });
 
-// Copy Folders
+// Copy Folders (unchanged)
 foldersToCopy.forEach(folder => {
   const src = path.join(publicDir, folder);
   const dest = path.join(distDir, folder);
@@ -51,6 +67,11 @@ if (fs.existsSync(htmlFile)) {
   html = html.replace(/href="\//g, 'href="./');
   html = html.replace(/src="\//g, 'src="./');
   
+  // --- Update paths into  HTML ---
+  // Preplace all references from  _next/ to app_next/
+  html = html.replace(new RegExp(nextPrefix.replace(/\./g, '\\.'), 'g'), './app_next/'); 
+  // ------------------------------------------------------------------
+
   fs.writeFileSync(htmlFile, html);
   console.log('✅ Updated HTML paths for Chrome Extension');
 }
