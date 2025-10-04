@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Example from '@/components/page/Page';
+import Example from '@/pages/Home';
 
 describe('Example Component', () => {
   it('renders the title', () => {

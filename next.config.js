@@ -8,7 +8,7 @@ const nextConfig = {
     unoptimized: true,
   },
   sassOptions: {
-    includePaths: ['./src/styles'],
+    includePaths: ['./src', './src/styles'],
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
