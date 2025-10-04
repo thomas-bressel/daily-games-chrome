@@ -1,0 +1,39 @@
+services:
+  daily-games-chrome:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: daily-games-chrome
+    ports:
+      - "3000:3000"
+    networks:
+      - daily-games-chrome-net
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  apache:
+    image: httpd:2.4-alpine
+    container_name: daily-games-apache
+    ports:
+      - "8080:80"
+    networks:
+      - daily-games-chrome-net
+    volumes:
+      - ./dist:/usr/local/apache2/htdocs/:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "httpd", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  daily-games-chrome-net:
+    driver: bridge
+    name: daily-games-chrome-net
