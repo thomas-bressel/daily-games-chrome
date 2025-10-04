@@ -1,31 +1,31 @@
-
-   
-   
-   $white2: #f1f1f1;
-    $white: #FFFFFF;
-    $greylight: #A8B3CF;
-    $greydark: #2D323B;
-    $black: #000000;
-    $black2: #17191F;
-    $black3: #0E1217;
-    $greendark: #255643;
-    $greenlight: #39E58C;
-    $reddark: #512B30;
-    $redlight: #E04337;
-    $yellowdark: #9A851E;
-    $yellowlight: #FFEE00;
-    $purpledark: #422256;
-    $purplelight: #CE3DF3;
-    $orangedark: #492B1C;
-    $orangelight: #FF8E3B;
-    $bluedark: #0E4046;
-    $bluelight: #2CDCE6;
-    $mask: #5F37E9;
-    $mask2: #042b00;
-    $purpleblue: #514B81;
+$black: #000000;
+$black-light: #1E1E1E;
+$greenlight: #00FF41;
 
 
-    
+
+
+$white2: #f1f1f1;
+$white: #FFFFFF;
+$greylight: #A8B3CF;
+$greydark: #2D323B;
+$greendark: #255643;
+$reddark: #512B30;
+$redlight: #E04337;
+$yellowdark: #9A851E;
+$yellowlight: #FFEE00;
+$purpledark: #422256;
+$purplelight: #CE3DF3;
+$orangedark: #492B1C;
+$orangelight: #FF8E3B;
+$bluedark: #0E4046;
+$bluelight: #2CDCE6;
+$mask: #5F37E9;
+$mask2: #042b00;
+$purpleblue: #514B81;
+
+
+
 .color-greylight {
     color: $greylight !important;
 }
@@ -102,9 +102,6 @@
     background-color: purple !important;
 }
 
-.background-black {
-    background-color: black !important;
-}
 
 .background-white {
     background-color: white !important;

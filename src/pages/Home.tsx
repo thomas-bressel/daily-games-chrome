@@ -1,10 +1,12 @@
 "use client"
 
-import styles from './Home.module.scss';
+import Header from '@/components/header/Header'
 
 const Home = () => {
   return (
-<p>Welcome to my homepage</p>
+<>
+<Header/>
+</>
   );
 };
 

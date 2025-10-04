@@ -1,0 +1,29 @@
+@use '@/styles/colors' as color;
+
+.header {
+   background-color: color.$black-light;
+   height: 70px;
+
+   &__bloc {
+    &_left {
+        &__logo{
+            width: 4rem;
+        }
+        
+    }
+    &_middle {
+        
+
+    }
+    &_right {
+
+    }
+
+
+
+
+   }
+
+
+
+}

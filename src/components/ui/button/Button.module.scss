@@ -1,0 +1,38 @@
+@use '@/styles/variables' as var;
+@use '@/styles/colors' as color;
+
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: color.$greenlight 2px solid;
+    border-radius: 6px;
+    min-width: var.$btn-w;
+    height: var.$btn-h;
+
+
+
+    &__icon {
+        width: var.$btn-icn-size;
+    }
+
+    &__text {
+        display: none;
+        color: color.$greenlight;
+        text-transform: uppercase;
+    }
+
+}
+
+@media screen and (min-width: 350px) {
+
+    .button {
+
+        &__text {
+            display: block;
+        }
+
+    }
+}
