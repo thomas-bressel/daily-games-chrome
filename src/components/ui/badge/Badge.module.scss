@@ -1,0 +1,81 @@
+@use '@/styles/variables' as var;
+@use '@/styles/fonts' as font;
+@use '@/styles/colors' as color;
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+}
+
+
+.separator {
+    color: color.$white;
+    transform: scale(2);
+}
+
+
+.count {
+    font-family: font.$JetBrainMonoRegular;
+    font-size: var.$badge-count-size;
+}
+
+.text {
+    font-family: font.$JetBrainMonoRegular;
+    font-size: var.$badge-txt-size;
+    font-weight: 400;
+    text-transform: lowercase;
+}
+
+
+.badge {
+    display: flex;
+    align-items: center;
+
+    height: var.$badge-h;
+    padding: 0 1rem;
+
+    border-radius: 6px;
+    border: solid 2px transparent;
+    background-color: transparent;
+
+    &__green { color: color.$greenlight; }
+    &__blue { color: color.$bluelight; }
+    &__purple { color: color.$purplelight; }
+
+
+}
+
+@media screen and (min-width: 900px) {
+
+    .separator { display: none; }
+
+    .badge {
+
+        &__green {
+            border-color: color.$greenlight;
+            background-color: color.$greenlight-alpha;
+            color: color.$greenlight;
+        }
+
+        &__blue {
+            border-color: color.$bluelight;
+            background-color: color.$bluelight-alpha;
+            color: color.$bluelight;
+        }
+
+        &__purple {
+            border-color: color.$purplelight;
+            background-color: color.$purplelight-alpha;
+            color: color.$purplelight;
+        }
+    }
+
+    .text {
+         font-family: font.$InterMedium;
+    text-transform: uppercase;
+}
+}

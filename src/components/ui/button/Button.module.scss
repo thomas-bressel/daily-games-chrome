@@ -12,7 +12,6 @@
     border: color.$greenlight 2px solid;
     border-radius: 6px;
     
-    // width: var.$btn-w;
     height: var.$btn-h;
     padding: 0 1rem;
     
@@ -20,7 +19,7 @@
         background-color: color.$greenlight;
         box-shadow: 0 0 20px color.$greenlight-alpha;
         
-        .button__icon {
+        .icon {
             fill: color.$black-light;
             rotate: 180deg;
             transition: 500ms;
@@ -32,13 +31,13 @@
             }
         }
         
-        .button__text {
+        .text {
             color: color.$black-light;
             cursor: pointer;
         }
     }
     
-    &__icon {
+    .icon {
         width: var.$btn-icn-size;
         fill: color.$greenlight;
         
@@ -52,23 +51,23 @@
         }
     }
     
-    &__text {
+    .text {
         display: none;
     }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 900px) {
 
     .button {
 
         &:hover {
-            .button__text {
+            .text {
                 color: color.$black-light;
                 cursor: pointer;
             }
         }
 
-        &__text {
+        .text {
             display: block;
             font-size: 12px;
             font-family: font.$JetBrainMonoRegular;

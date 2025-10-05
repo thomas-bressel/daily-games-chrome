@@ -6,11 +6,11 @@ const Button = (props: {text?: string, icon?: React.ReactNode, viewBox?: string}
         <>
             <button className={style.button}>
                 {props.icon ?
-                    <svg className={style.button__icon} xmlns="http://www.w3.org/2000/svg" viewBox={props.viewBox}>{props.icon}</svg>
+                    <svg className={style.icon} xmlns="http://www.w3.org/2000/svg" viewBox={props.viewBox}>{props.icon}</svg>
                 : null}
                 
                 
-                {props.text ? <span className={style.button__text}>{props.text}</span> : null}
+                {props.text ? <span className={style.text}>{props.text}</span> : null}
             </button>
 
 
