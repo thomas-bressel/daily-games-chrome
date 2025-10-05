@@ -1,28 +1,32 @@
 @use '@/styles/colors' as color;
 
 .header {
-   background-color: color.$black-light;
-   height: 70px;
+    display: flex;
+    align-items: center;
 
-   &__bloc {
-    &_left {
-        &__logo{
-            width: 4rem;
+    background-color: color.$black-light;
+    width: 100%;
+    height: 70px;
+
+    &__bloc {
+        &_left {
+            &__logo {
+                width: 4rem;
+            }
+
         }
-        
+
+        &_middle {
+            display: flex;
+            
+        }
+
+        &_right {}
+
+
+
+
     }
-    &_middle {
-        
-
-    }
-    &_right {
-
-    }
-
-
-
-
-   }
 
 
 

@@ -1,4 +1,5 @@
 @use '@/styles/variables' as var;
+@use '@/styles/fonts' as font;
 @use '@/styles/colors' as color;
 
 
@@ -6,32 +7,73 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    gap: .2rem;
+    
     border: color.$greenlight 2px solid;
     border-radius: 6px;
+    
     min-width: var.$btn-w;
     height: var.$btn-h;
-
-
-
+    padding: 0 1rem;
+    
+    &:hover {
+        background-color: color.$greenlight;
+        box-shadow: 0 0 20px color.$greenlight-alpha;
+        
+        .button__icon {
+            fill: color.$black-light;
+            rotate: 180deg;
+            transition: 500ms;
+            
+            g {
+                stroke: color.$black-light;
+                fill: none;
+                stroke-width: 1;
+            }
+        }
+        
+        .button__text {
+            color: color.$black-light;
+            cursor: pointer;
+        }
+    }
+    
     &__icon {
         width: var.$btn-icn-size;
+        fill: color.$greenlight;
+        
+        rotate: 0deg;
+        transition: 500ms;
+        
+        g {
+            stroke: color.$greenlight;
+            fill: none;
+            stroke-width: 1;
+        }
     }
-
+    
     &__text {
         display: none;
-        color: color.$greenlight;
-        text-transform: uppercase;
     }
-
 }
 
-@media screen and (min-width: 350px) {
+@media screen and (min-width: 750px) {
 
     .button {
 
+        &:hover {
+            .button__text {
+                color: color.$black-light;
+                cursor: pointer;
+            }
+        }
+
         &__text {
             display: block;
+            font-size: 12px;
+            font-family: font.$JetBrainMonoRegular;
+            color: color.$greenlight;
+            text-transform: uppercase;
         }
 
     }
