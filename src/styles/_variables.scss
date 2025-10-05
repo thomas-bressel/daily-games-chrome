@@ -1,4 +1,11 @@
 // buttons config
-$btn-h: 32px;
-$btn-w: 50px;
+$btn-size: 1.2;
+$btn-h: calc(32px * $btn-size);
+$btn-w: calc(50px * $btn-size);
 $btn-icn-size: 1rem;
+
+// badge config
+$badge-size: 1;
+$badge-h: calc(32px * $badge-size);
+$badge-w: calc(50px * $badge-size);
+$badge-icn-size: 1rem;

@@ -1,33 +1,53 @@
 @use '@/styles/colors' as color;
 
 .header {
-    display: flex;
-    align-items: center;
-
     background-color: color.$black-light;
-    width: 100%;
-    height: 70px;
-
     &__bloc {
         &_left {
-            &__logo {
+            &_logo {
                 width: 4rem;
+                min-width: 4rem;
             }
 
         }
 
         &_middle {
             display: flex;
-            
+            gap: 2rem;
         }
 
-        &_right {}
-
-
-
-
+        &_right {
+            &_avatar {
+                width: 3rem;
+                min-width: 3rem;
+                border-radius: 8px;
+            }
+        }
     }
 
+    &__list {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+    }
+   
+}
 
 
+.header__top {
+    width: 100%;
+    height: 70px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__bot {
+    width: 100%;
+    height: 30px;
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
