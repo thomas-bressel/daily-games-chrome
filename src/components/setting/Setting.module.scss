@@ -1,0 +1,38 @@
+@use '@/styles/colors' as color;
+@use '@/styles/fonts' as font;
+
+
+
+.container {
+    background-color: color.$black-light;
+    padding: 1rem;
+
+}
+
+.active {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.bloc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titleh2 {
+    color: color.$greenlight;
+    text-transform: uppercase;
+    font-family: font.$SpaceGroteskMedium;
+    font-size: 1.5rem;
+}
+
+.titleh3 {
+    color: color.$bluelight;
+    text-transform: uppercase;
+    font-family: font.$SpaceGroteskMedium;
+    font-size: 1.2rem;
+}
+

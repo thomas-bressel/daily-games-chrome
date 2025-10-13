@@ -1,0 +1,38 @@
+@use '@/styles/colors' as color;
+@use '@/styles/fonts' as font;
+
+
+
+.container {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        width: 1rem;
+
+        &_on {
+            fill: color.$greenlight;
+        }
+
+        &_off {
+            fill: color.$redlight;
+        }
+    }
+}
+
+
+.text {
+    font-family: font.$JetBrainMonoRegular;
+    text-transform: uppercase;
+    font-size: .8rem;
+
+
+    &__white {
+        color: color.$white;
+    }
+
+    &__green {
+        color: color.$greenlight;
+    }
+
+}

@@ -1,5 +1,6 @@
 $JetBrainMonoRegular: 'JetBrainMono Regular';
 $InterMedium: 'Inter Medium';
+$SpaceGroteskMedium: 'Space Grotesk Medium';
 
 
 
@@ -11,5 +12,10 @@ $InterMedium: 'Inter Medium';
 @font-face {
     font-family: 'Inter Medium';
     src: url('/fonts/Inter-Medium.woff2') format('woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Space Grotesk Medium';
+    src: url('/fonts/SpaceGrotesk-Medium.woff2') format('woff2');
     font-weight: 400;
 }
