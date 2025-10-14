@@ -4,9 +4,10 @@ import style from './Header.module.scss'
 import Button from '@/components/ui/button/Button'
 import Badge from '@/components/ui/badge/Badge'
 import { icons } from '@/components/icons/icons'
+import { useSetting } from '@/contexts/SettingContext'
 
 const Header = () => {
-
+    const { toggleSetting } = useSetting();
 
     return (
         <header className={style.header}>
@@ -19,7 +20,9 @@ const Header = () => {
 
                 <div className={style.bloc__middle}>
                     <Button icon={icons.arrowsSpinner} text="refresh" viewBox="0 0 256 256" />
-                    <Button icon={icons.settingWheel} viewBox="0 0 16 16" />
+                    <div onClick={toggleSetting} className={style.settingButton}>
+                        <Button icon={icons.settingWheel} viewBox="0 0 16 16" />
+                    </div>
                 </div>
 
                 <div className={style.bloc__right}>
@@ -36,5 +39,3 @@ const Header = () => {
 }
 
 export default Header;
-
-

@@ -5,10 +5,10 @@ import Setting from '@/components/setting/Setting'
 
 const Home = () => {
   return (
-<>
-<Header/>
-<Setting/>
-</>
+    <>
+      <Header />
+      <Setting />
+    </>
   );
 };
 

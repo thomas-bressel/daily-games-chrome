@@ -32,6 +32,10 @@
     }
 }
 
+.settingButton {
+    display: block;
+}
+
 .list {
     display: flex;
     justify-content: center;
@@ -39,6 +43,10 @@
 }
 
 .top {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: color.$black-light;
     width: 100%;
     height: fit-content;
     padding: 1rem;
@@ -73,6 +81,10 @@
         &__right {
             order: 5;
         }
+    }
+
+    .settingButton {
+        display: none;
     }
 
     .list {

@@ -3,8 +3,7 @@
 @use '@/styles/animations' as *;
 
 
-
-.all {
+.single {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,7 +12,7 @@
     padding: .5rem;
 
     &__on {
-        border: 1px solid color.$greenlight;
+        border: 1px solid color.$bluelight;
     }
 
     &__off {
@@ -26,12 +25,13 @@
         gap: .5rem;
 
         svg path {
-            fill: color.$greenlight;
+            fill: color.$bluelight;
         }
 
         &__on {
             opacity: 1;
-             animation: pulse 2s infinite;
+            animation: pulse 2s infinite;
+
         }
 
         &__off {
@@ -46,7 +46,7 @@
         font-size: .8rem;
 
         &__on {
-            color: color.$greenlight;
+            color: color.$bluelight;
         }
 
         &__off {
@@ -59,13 +59,13 @@
         border-radius: 6px;
         padding: .4rem .2rem;
         min-width: 32px;
-    text-align: center;
-        
+        text-align: center;
+
         &__on {
-            background-color: color.$greenlight-alpha;
-            border: 1px solid color.$greenlight;
+            background-color: color.$bluelight-alpha;
+            border: 1px solid color.$bluelight;
         }
-        
+
         &__off {
             background-color: color.$greydark;
             border: 1px solid transparent;
@@ -77,8 +77,8 @@
         font-family: font.$JetBrainMonoRegular;
         font-size: .75rem;
 
-                &__on {
-            color: color.$greenlight;
+        &__on {
+            color: color.$bluelight;
         }
 
         &__off {

@@ -1,19 +1,21 @@
 @use '@/styles/colors' as color;
 @use '@/styles/fonts' as font;
 
-
-
 .container {
     background-color: color.$black-light;
     padding: 1rem;
-
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    overflow-y: auto;
+    z-index: 1000;
 }
 
 .active {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
+    transform: translateX(0);
 }
 
 .bloc {
@@ -22,11 +24,26 @@
     justify-content: space-between;
 }
 
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
 .titleh2 {
     color: color.$greenlight;
     text-transform: uppercase;
     font-family: font.$SpaceGroteskMedium;
     font-size: 1.5rem;
+    margin: 1rem 0;
 }
 
 .titleh3 {
@@ -34,5 +51,131 @@
     text-transform: uppercase;
     font-family: font.$SpaceGroteskMedium;
     font-size: 1.2rem;
+    margin: 1rem 0;
 }
 
+.feeds__list {
+    max-height: 10rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: color.$greenlight transparent;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+    
+    &:hover {
+        border-radius: 12px;
+        border: 1px solid color.$greylight;
+    }
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .5rem;
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .5rem;
+    }
+
+    &__item {
+        color: color.$greylightplus;
+        font-family: font.$InterMedium;
+        font-size: .75rem;
+        border: 1px solid color.$greylight;
+        background-color: color.$greydark;
+        padding: .2rem .4rem;
+        border-radius: 8px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: color.$greylight;
+        }
+    }
+
+    &__selected {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        color: color.$greenlight;
+        font-family: font.$InterMedium;
+        font-size: .75rem;
+        background-color: color.$greenlight-alpha;
+        padding: .2rem .4rem;
+        border-radius: 8px;
+
+        button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0;
+            padding: 0.1rem;
+            width: 1rem;
+            height: 1rem;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            svg {
+                width: 0.75rem;
+                height: 0.75rem;
+                fill: color.$greenlight;
+            }
+
+            &:hover {
+                background-color: color.$greenlight-alpha;
+                border-radius: 50%;
+                border: 1px solid color.$greenlight;
+            }
+        }
+    }
+}
+
+.footer {
+    background-image: radial-gradient(circle at 20% 80%, rgba(0, 255, 65, .1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(0, 255, 255, .1) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(255, 0, 255, .1) 0%, transparent 50%);
+
+    padding: calc(.25rem * 3);
+    border: 1px solid color.$white;
+    border-radius: 16px;
+    font-family: font.$JetBrainMonoRegular;
+    font-size: .75rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 2;
+    margin: 4rem 0;
+    margin-bottom: 6rem;
+
+
+    &__title {
+        color: color.$greenlight;
+
+        &::after,
+        &::before {
+            content: " ◆ ";
+        }
+    }
+
+    &__description {
+        color: color.$white;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .container {
+        width: 400px;
+        top: 80px;
+        // height: auto;
+        transform: translateX(0);
+        transition: none;
+        scrollbar-width: thin;
+        scrollbar-color: color.$greenlight transparent;
+    }
+
+    .closeButton {
+        display: none;
+    }
+}

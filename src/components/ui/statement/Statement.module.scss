@@ -1,6 +1,6 @@
 @use '@/styles/colors' as color;
 @use '@/styles/fonts' as font;
-
+@use '@/styles/animations' as *;
 
 
 .container {
@@ -10,12 +10,15 @@
     &__icon {
         width: 1rem;
 
+
         &_on {
             fill: color.$greenlight;
+            animation: pulse 2s infinite;
         }
 
         &_off {
             fill: color.$redlight;
+            animation: pulse 2s infinite;
         }
     }
 }
@@ -36,3 +39,5 @@
     }
 
 }
+
+
