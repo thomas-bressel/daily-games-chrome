@@ -1,7 +1,7 @@
-import style from './Button.module.scss'
+import style from './AnimatedButton.module.scss'
 
 
-const Button = (props: {text?: string, icon?: React.ReactNode, viewBox?: string}) => {
+const AnimatedButton = (props: {text?: string, icon?: React.ReactNode, viewBox?: string}) => {
     return (
         <>
             <button className={style.button}>
@@ -20,4 +20,4 @@ const Button = (props: {text?: string, icon?: React.ReactNode, viewBox?: string}
     )
 }
 
-export default Button;
+export default AnimatedButton;

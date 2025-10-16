@@ -32,6 +32,7 @@
     }
 }
 
+// Make the setting button visible in mobile view
 .settingButton {
     display: block;
 }
@@ -82,7 +83,8 @@
             order: 5;
         }
     }
-
+    
+    // Make the setting button visible in desktop view
     .settingButton {
         display: none;
     }

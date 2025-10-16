@@ -1,0 +1,36 @@
+@use '@/styles/colors' as color;
+@use '@/styles/fonts' as font;
+
+
+.main {
+    background-color: color.$black-light;
+    margin-top: 8rem;
+    width: 100%;
+    padding: 1rem;
+    
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .main {
+        margin-top: 5.2rem;
+        margin-left: 25rem;
+        width: calc(100% - 25rem);
+        
+        &__cards {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .main__cards {
+        gap: 2rem;
+    }
+}

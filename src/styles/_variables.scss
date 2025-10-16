@@ -1,8 +1,14 @@
-// buttons config
-$btn-size: 1.2;
-$btn-h: calc(32px * $btn-size);
-$btn-w: calc(50px * $btn-size);
-$btn-icn-size: 1rem;
+// animated buttons config
+$anim-btn-size: 1.2;
+$anim-btn-h: calc(32px * $anim-btn-size);
+$anim-btn-w: calc(50px * $anim-btn-size);
+$anim-btn-icn-size: 1rem;
+
+// svg buttons config
+$svg-btn-size: 1.2;
+$svg-btn-h: calc(24px * $svg-btn-size);
+$svg-btn-w: calc(36px * $svg-btn-size);
+$svg-btn-icn-size: 1.5rem;
 
 // badge config
 $badge-size: 1;

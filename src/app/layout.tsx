@@ -1,7 +1,6 @@
 "use client";
 
 import '@/styles.scss';
-import { SettingProvider } from '@/contexts/SettingContext';
 
 export default function RootLayout({
   children,
@@ -11,9 +10,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
-        <SettingProvider>
           {children}
-        </SettingProvider>
       </body>
     </html>
   );

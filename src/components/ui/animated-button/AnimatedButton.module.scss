@@ -12,7 +12,7 @@
     border: color.$greenlight 2px solid;
     border-radius: 6px;
     
-    height: var.$btn-h;
+    height: var.$anim-btn-h;
     padding: 0 1rem;
     
     &:hover {
@@ -38,7 +38,7 @@
     }
     
     .icon {
-        width: var.$btn-icn-size;
+        width: var.$anim-btn-icn-size;
         fill: color.$greenlight;
         
         rotate: 0deg;

@@ -1,1 +1,10 @@
 @use '@/styles/mixins';
+
+
+
+
+.main {
+    display: flex;
+    flex-direction: row;
+    // width: 100%;
+}

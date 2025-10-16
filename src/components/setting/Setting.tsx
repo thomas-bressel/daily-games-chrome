@@ -5,10 +5,15 @@ import { icons } from '@/components/icons/icons'
 import Statement from '@/components/ui/statement/Statement'
 import All from '../ui/all/All'
 import Single from '../ui/single/Single'
-import { useSetting } from '@/contexts/SettingContext'
+import { useSettingStore } from '@/stores/settingStore'
 
 const Setting = () => {
-    const { isSettingOpen, closeSetting } = useSetting();
+
+    // Subscribe to isSettingOpen - re render component if it changes
+    const isSettingOpen = useSettingStore((state) => state.isSettingOpen);
+
+    // If on click then run the closeSetting function
+    const closeSetting = useSettingStore((state) => state.closeSetting);
 
     return (
         <>

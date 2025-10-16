@@ -1,0 +1,32 @@
+@use '@/styles/variables' as var;
+@use '@/styles/fonts' as font;
+@use '@/styles/colors' as color;
+
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+    
+    border-radius: 6px;
+    
+    height: var.$svg-btn-h;
+    padding: .2rem .2rem;
+    
+    &:hover {
+        background-color: color.$white;
+        box-shadow: 0 0 20px color.$greenlight-alpha;
+        
+        .icon {
+            stroke: color.$black-light;
+            fill: color.$white;
+        }
+    }
+    
+    .icon {
+        stroke: color.$white;
+        width: var.$svg-btn-icn-size;
+        fill: none;
+    }
+}

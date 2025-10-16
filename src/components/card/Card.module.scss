@@ -1,0 +1,174 @@
+@use '@/styles/colors' as color;
+@use '@/styles/fonts' as font;
+
+
+.card {
+    background-color: color.$greylight;
+    border-radius: 16px;
+    border: 1px solid color.$greylightplus;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 900px) {
+    .card {
+        width: calc(50% - 0.75rem);
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card {
+        width: calc(33.333% - 1.34rem);
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .card {
+        width: calc(25% - 1.5rem);
+    }
+}
+
+.category {
+    position: absolute;
+    padding: .4rem .5rem;
+    margin-top: .5rem;
+    margin-left: .5rem;
+    border: 1px solid color.$purplelight;
+    border-radius: 8px;
+    background-color: color.$purplelight-alpha;
+    font-family: font.$InterMedium;
+    font-weight: 600;
+    color: color.$purplelight;
+    font-size: .75rem;
+}
+
+.cover {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    object-fit: cover;
+    display: block;
+}
+
+.header {
+    padding: 1rem;
+    
+    &__icon {
+        width: .8rem;
+        margin-right: 8px;
+        fill: color.$white;
+    }
+    
+    &__website {
+        font-family: font.$JetBrainMonoRegular;
+        color: color.$greenlight;
+        display: inline-block;
+        font-size: .875rem;
+    }
+    
+    &__time {
+        font-family: font.$JetBrainMonoRegular;
+        color: color.$white;
+        float: right;
+        font-size: .75rem;
+    }
+}
+
+.article {
+    flex-grow: 1;
+    
+    &__title {
+        color: color.$white;
+        font-family: font.$SpaceGroteskMedium;
+        font-size: 1.25rem;
+        padding: 0 1rem;
+        line-height: 1.4;
+
+
+        // Truncate limit  to 2 lines
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+    }
+    
+    &__description {
+        display: none;
+
+        @media screen and (min-width: 900px) {
+            font-family: font.$InterMedium;
+            font-size: 1rem;
+            padding: 0 1rem;
+            color: color.$white;
+            line-height: 1.5;
+            margin-top: 1rem;
+    
+            // Truncate limit  to 3 lines
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+}
+    }
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .5rem;
+    padding: 1rem;
+    
+    &__item {
+        color: color.$greylightplus;
+        font-family: font.$InterMedium;
+        font-size: .75rem;
+        border: 1px solid color.$greylight;
+        background-color: color.$greydark;
+        padding: .2rem .4rem;
+        border-radius: 8px;
+        
+        &:hover {
+            cursor: pointer;
+            background-color: color.$greylight;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    border-top: 1px solid color.$white;
+    margin-top: auto;
+}
+
+.views {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+
+    &__eye {
+        width: 1.5rem;
+        stroke: color.$white;
+    }
+
+    &__count {
+        color: color.$white;
+        font-family: font.$JetBrainMonoRegular;
+        font-size: .875rem;
+    }
+}

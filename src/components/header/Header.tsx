@@ -1,27 +1,35 @@
 "use client";
 
+// Style imports
 import style from './Header.module.scss'
-import Button from '@/components/ui/button/Button'
-import Badge from '@/components/ui/badge/Badge'
+
+// Component imports
 import { icons } from '@/components/icons/icons'
-import { useSetting } from '@/contexts/SettingContext'
+import AnimatedButton from '@/components/ui/animated-button/AnimatedButton'
+import Badge from '@/components/ui/badge/Badge'
+
+// Store import
+import { useSettingStore } from '@/stores/settingStore'
+
+
 
 const Header = () => {
-    const { toggleSetting } = useSetting();
+    const toggleSetting = useSettingStore((state) => state.toggleSetting);
 
     return (
         <header className={style.header}>
             <section className={style.top}>
 
+                {/** Daily games logo */}
                 <div className={style.bloc__left}>
                     <img className={style.bloc__left_logosm} src="/icons/icon-64.png" alt="" />
                     <img className={style.bloc__left_logolg} src="/img/logo-lg.png" alt="" />
                 </div>
 
                 <div className={style.bloc__middle}>
-                    <Button icon={icons.arrowsSpinner} text="refresh" viewBox="0 0 256 256" />
+                    <AnimatedButton icon={icons.arrowsSpinner} text="refresh" viewBox="0 0 256 256" />
                     <div onClick={toggleSetting} className={style.settingButton}>
-                        <Button icon={icons.settingWheel} viewBox="0 0 16 16" />
+                        <AnimatedButton icon={icons.settingWheel} viewBox="0 0 16 16" />
                     </div>
                 </div>
 
